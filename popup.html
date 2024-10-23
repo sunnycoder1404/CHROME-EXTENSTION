@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Chrome Extension</title>
+  <title>AI Chrome Extension</title>
   <link rel="stylesheet" href="popup.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -13,61 +13,86 @@
       <h1>AI Chrome Extension</h1>
     </header>
 
-    <section class="section">
-      <h2>User Points</h2>
-      <div id="pointsDisplay">Points: 0</div>
-    </section>
+    <main>
+      <!-- User Points Section -->
+      <section class="section" aria-labelledby="user-points">
+        <h2 id="user-points">User Points</h2>
+        <div id="pointsDisplay" aria-live="polite" role="status">Points: 0</div>
+      </section>
 
-    <section class="section">
-      <h2>User Account</h2>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <button id="loginButton">Log In</button>
-      <button id="signUpButton">Sign Up</button>
-    </section>
+      <!-- User Account Section -->
+      <section class="section" aria-labelledby="user-account">
+        <h2 id="user-account">User Account</h2>
+        <form id="userForm" novalidate>
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Email" required>
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Password" required>
+          
+          <div class="button-group">
+            <button type="button" id="loginButton">Log In</button>
+            <button type="button" id="signUpButton">Sign Up</button>
+          </div>
+        </form>
+      </section>
 
-    <section class="section">
-      <h2>AI Automation</h2>
-      <label for="aiToggle">Enable AI Automation:</label>
-      <input type="checkbox" id="aiToggle">
-    </section>
+      <!-- AI Automation Section -->
+      <section class="section" aria-labelledby="ai-automation">
+        <h2 id="ai-automation">AI Automation</h2>
+        <label for="aiToggle">
+          <input type="checkbox" id="aiToggle"> Enable AI Automation
+        </label>
+      </section>
 
-    <section class="section">
-      <h2>Customization</h2>
-      <label for="themeSelect">Select Theme:</label>
-      <select id="themeSelect">
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="custom">Custom</option>
-      </select>
+      <!-- Customization Section -->
+      <section class="section" aria-labelledby="customization">
+        <h2 id="customization">Customization</h2>
+        <label for="themeSelect">Select Theme:</label>
+        <select id="themeSelect">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="custom">Custom</option>
+        </select>
 
-      <h2>Customize Your Theme</h2>
-      <label for="bgColor">Background Color:</label>
-      <input type="color" id="bgColor" value="#f3f4f6">
-      
-      <label for="textColor">Text Color:</label>
-      <input type="color" id="textColor" value="#333">
-      
-      <button id="saveTheme">Save Theme</button>
-    </section>
+        <fieldset>
+          <legend>Customize Your Theme</legend>
+          <label for="bgColor">Background Color:</label>
+          <input type="color" id="bgColor" value="#f3f4f6">
 
-    <section class="section">
-      <h2>Analytics Dashboard</h2>
-      <div id="dashboard">
+          <label for="textColor">Text Color:</label>
+          <input type="color" id="textColor" value="#333">
+
+          <button type="button" id="saveTheme">Save Theme</button>
+        </fieldset>
+      </section>
+
+      <!-- Analytics Dashboard Section -->
+      <section class="section" aria-labelledby="analytics-dashboard">
+        <h2 id="analytics-dashboard">Analytics Dashboard</h2>
+        <div id="dashboard">
           <canvas id="pointsChart" width="400" height="200"></canvas>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <section class="section">
-      <h2>Export/Import Configurations</h2>
-      <button id="exportConfig">Export Config</button>
-      <input type="file" id="importConfig" accept=".json">
-    </section>
+      <!-- Export/Import Configurations Section -->
+      <section class="section" aria-labelledby="export-import">
+        <h2 id="export-import">Export/Import Configurations</h2>
+        <div class="button-group">
+          <button type="button" id="exportConfig">Export Config</button>
+          <input type="file" id="importConfig" accept=".json">
+        </div>
+      </section>
 
-    <section class="section">
-      <button id="saveSettings">Save Settings</button>
-    </section>
+      <!-- Save Settings Button -->
+      <section class="section" aria-labelledby="save-settings">
+        <div class="button-group">
+          <button type="button" id="saveSettings">Save Settings</button>
+        </div>
+      </section>
+    </main>
   </div>
+
   <script src="popup.js"></script>
 </body>
 </html>
