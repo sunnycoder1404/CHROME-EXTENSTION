@@ -1,71 +1,76 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* General Styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f3f4f6;
     color: #333;
-    padding: 0;
-    margin: 0;
-    line-height: 1.5;
+    line-height: 1.6;
     font-size: 14px;
 }
 
-h1, h2 {
-    color: #4CAF50;
-}
-
+/* Main Container */
 .main-container {
     padding: 20px;
-    max-width: 350px;
+    max-width: 360px;
     margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Header */
+/* Header Styling */
 header h1 {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 20px;
+    text-align: center;
+    color: #4CAF50;
 }
 
 /* Sections */
 .section {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .section h2 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #333;
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #4CAF50;
 }
 
-/* Customization and Switches */
-.switch {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 0;
-}
-
-.switch input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-}
-
-.dropdown {
+/* Form Inputs */
+input[type="email"],
+input[type="password"],
+input[type="color"],
+select,
+textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-top: 5px;
-    border-radius: 4px;
     border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
-/* Buttons */
+/* Button Styling */
 .button {
+    display: inline-block;
     background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
+    color: #fff;
+    padding: 12px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .button.primary {
@@ -74,29 +79,154 @@ header h1 {
 
 .button:hover {
     background-color: #45a049;
+    transform: translateY(-2px);
 }
 
-/* Status and Notifications */
-.status {
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.button-group .button {
+    width: auto;
+    flex: 1;
+}
+
+/* Custom Switch Styling */
+.switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.switch input[type="checkbox"] {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.switch input[type="checkbox"]:checked {
+    background: #4CAF50;
+}
+
+.switch input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    top: 1px;
+    left: 1px;
+    transition: left 0.3s ease;
+}
+
+.switch input[type="checkbox"]:checked::before {
+    left: 21px;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    width: 100%;
     padding: 10px;
-    background-color: #eee;
+    margin-top: 5px;
     border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #fff;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Status and Notification Messages */
+.status {
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
     color: #555;
     text-align: center;
+    font-size: 14px;
 }
 
 .notification {
-    font-size: 12px;
+    font-size: 13px;
     color: #f44336;
-    margin-top: 10px;
+    margin-top: 15px;
     text-align: center;
 }
 
-/* Links */
+/* Help Links */
 .help-link {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .help-link a {
-   
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.help-link a:hover {
+    color: #388E3C;
+}
+
+/* Analytics Dashboard Styling */
+#dashboard {
+    margin-top: 15px;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Form Accessibility */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: 2px solid #4CAF50;
+    outline-offset: 2px;
+}
+
+/* Customization Section */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+legend {
+    padding: 0 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .main-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .button {
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .section h2 {
+        font-size: 16px;
+    }
+}
